@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Poem Management System {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="d-flex flex-wrap my-4">
+        <div class="block d-flex flex-column align-items-center justify-content-center">
+            <h4>Total Poems</h4>
+            <span>{{ poem_count }}</span>
+        </div>
+        
+        <div class="block d-flex flex-column align-items-center justify-content-center">
+            <h4>Total Books</h4>
+            <span>5</span>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center bar">Add a poem</div>
+
+    <div class="form mt-4">
+        <form method="POST" class="form-control">
+            {% csrf_token %}
+            <textarea class="form-control" required placeholder="Write your poem here..." name="poem" cols="30" rows="15"></textarea>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
