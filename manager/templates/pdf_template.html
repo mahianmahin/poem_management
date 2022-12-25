@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container poem_box d-flex flex-column my-5 align-items-center justify-content-center text-center flex-wrap">
+    {% for item in poems %}
+    <pre>{{ item.poem }}</pre> <br> <br>
+    
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock content %}

@@ -11,10 +11,10 @@
             <h4>Total Poems</h4>
             <span>{{ poem_count }}</span>
         </div>
-        
+
         <div class="block d-flex flex-column align-items-center justify-content-center">
             <h4>Total Books</h4>
-            <span>5</span>
+            <span>{{ book_count }}</span>
         </div>
     </div>
 
@@ -23,9 +23,21 @@
     <div class="form mt-4">
         <form method="POST" class="form-control">
             {% csrf_token %}
-            <textarea class="form-control" required placeholder="Write your poem here..." name="poem" cols="30" rows="15"></textarea>
-            <button type="submit">Save</button>
+            <textarea class="form-control poem_text" required placeholder="Write your poem here..." name="poem"
+                cols="30" rows="15"></textarea>
+            <button type="submit" id="save_button">Save</button>
         </form>
+
+        <script>
+            let button = document.getElementById("save_button");
+
+            button.addEventListener("click", function () {
+                let text = document.querySelector(".poem_text");
+                text.select();
+                document.execCommand("copy");
+            })
+        </script>
+
     </div>
 </div>
 
