@@ -28,7 +28,8 @@ def create_pdf(unsaved_poems):
 
     count = file_count()
 
-    with open(f'pdf/poem_book_{count+1}.html', "w", encoding="utf-8") as file:
+    # with open(f'pdf/poem_book_{count+1}.html', "w", encoding="utf-8") as file:
+    with open(f'/home/poemsystem/poem_management/pdf/poem_book_{count+1}.html', "w", encoding="utf-8") as file:
         file.write(html)
         file.close()
 
