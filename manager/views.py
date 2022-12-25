@@ -11,7 +11,7 @@ from .models import *
 
 
 def file_count():
-    return len(fnmatch.filter(os.listdir("pdf"), '*.*'))
+    return len(fnmatch.filter(os.listdir("pdf/"), '*.*'))
 
 
 def create_pdf(unsaved_poems):
